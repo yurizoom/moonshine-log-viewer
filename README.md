@@ -5,7 +5,7 @@ Log viewer for MoonShine
 
 ## Screenshot
 
-![wx20170809-165644](https://github.com/yurizoom/moonshine-log-viewer/blob/29113581-fe48fd86-7d23-11e7-9ee7-9680957171ee.png)
+![wx20170809-165644](https://raw.githubusercontent.com/yurizoom/moonshine-log-viewer/main/blob/screenshot.jpg)
 
 ## Installation
 
