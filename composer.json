@@ -1,0 +1,34 @@
+{
+    "name": "yurizoom/moonshine-log-viewer",
+    "type": "library",
+    "description": "Log viewer for moonshine",
+    "keywords": ["moonshine", "log", "viewer"],
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "yurizoom",
+            "homepage": "https://github.com/yurizoom",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "moonshine/moonshine": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "MoonShine\\LogViewer\\": "src/"
+        }
+    },
+    "conflict": {
+        "moonshine/moonshine": "<2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MoonShine\\LogViewer\\LogViewerServiceProvider"
+            ]
+        }
+    }
+}
