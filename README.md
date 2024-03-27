@@ -1,18 +1,26 @@
 Log viewer for MoonShine
 ============================
 
-[![Packagist](https://img.shields.io/packagist/l/laravel-admin-ext/log-viewer.svg?maxAge=2592000)](https://packagist.org/packages/laravel-admin-ext/log-viewer)
+Компонент для отображения логов.
+За основу взят [Log viewer для Laravel Admin](https://github.com/laravel-admin-extensions/log-viewer).
 
-## Screenshot
+Реализованы работа как в Windows, так и в Linux системах.
+
+Принцип работы в Window описан тут https://www.geekality.net/blog/php-tail-tackling-large-files .
+Фильтрация в Windows при работе с очень большими файлами, может вешать запрос.
+
+В Linux используются консольные команды cat, grep, sed, tail, head, awk.
+
+## Скриншот
 
 ![wx20170809-165644](https://raw.githubusercontent.com/yurizoom/moonshine-log-viewer/main/blob/screenshot.jpg)
 
-## Installation
+## Установка
 
 ```
 $ composer require yurizoom/moonshine-log-viewer -vvv
 ```
 
-License
+Лицензия
 ------------
-Licensed under [The MIT License (MIT)](LICENSE).
+[The MIT License (MIT)](LICENSE).

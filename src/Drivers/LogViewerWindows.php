@@ -131,7 +131,7 @@ final class LogViewerWindows extends AbstractLogViewer
          */
         [$logs, $offsetStart, $offsetEnd] = $this->tail($offset, $lines);
 
-        $this->filter($logs, $level, $env, $time_start, $time_end, $info);
+        $logs = $this->filter($logs, $level, $env, $time_start, $time_end, $info);
 
         $this->pageOffset['start'] = count($logs) ? $this->pageOffset['start'] ?? $offsetStart : $offsetStart;
         $this->pageOffset['end'] ??= $offsetEnd;
