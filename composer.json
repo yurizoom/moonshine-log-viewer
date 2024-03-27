@@ -4,7 +4,6 @@
     "description": "Log viewer for moonshine",
     "keywords": ["moonshine", "log", "viewer"],
     "license": "MIT",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "yurizoom",
