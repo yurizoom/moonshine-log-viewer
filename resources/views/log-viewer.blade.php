@@ -225,7 +225,6 @@
                         this.nextUrl = data.nextUrl;
                         this.prevUrl = data.prevUrl;
                         this.lastUpdate = data.lastUpdate;
-                        console.log(data);
                     });
             },
             fetchLogs() {

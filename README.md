@@ -9,7 +9,7 @@ Log viewer for MoonShine
 Принцип работы в Window описан тут https://www.geekality.net/blog/php-tail-tackling-large-files .
 Фильтрация в Windows при работе с очень большими файлами, может вешать запрос.
 
-В Linux используются консольные команды cat, grep, sed, tail, head, awk.
+В Linux используется работа с консольными команды.
 
 ## Скриншот
 
@@ -23,19 +23,17 @@ $ composer require yurizoom/moonshine-log-viewer -vvv
 
 ## Настройка
 
-### Путь до директории с логами
+В файле config/moonshine.php добавьте конфигурации.
 
-Для изменения пути до директории с логами добавьте в файл config/moonshine.php:
 ```php
-return [
-    ...
-    
+[
     'log_viewer' => [
+        // Автоматическое добавление в меню
+        'auto_menu' => true,
+        // Путь до директории с логами
         'path' => storage_path('logs'),
-    ],
-    
-    ...
-]  
+    ]
+]
 ```
 
 ### Добавление в меню
@@ -57,18 +55,6 @@ protected function menu(): array
             ...
         ];
     }
-```
-и в файле config/moonshine.app отключите автоматическое добавление в меню:
-```php
-return [
-    ...
-    
-    'log_viewer' => [
-        'auto_menu' => false,
-    ],
-    
-    ...
-]   
 ```
 
 Лицензия
