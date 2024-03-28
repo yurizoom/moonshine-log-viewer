@@ -13,7 +13,7 @@ class LogViewerServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'moonshine');
         $this->loadRoutesFrom(__DIR__.'/../routes/log-viewer.php');
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'moonshine');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'moonshine-log-viewer');
         $this->mergeConfigFrom(__DIR__.'/../config/log-viewer.php', 'moonshine.log_viewer');
 
         moonshine()

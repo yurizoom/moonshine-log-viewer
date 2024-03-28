@@ -8,7 +8,7 @@
                                               x-on:click="fetchLogs()"
                     >
                     <span>
-                        {{ __('moonshine::log-viewer.refresh') }}
+                        {{ __('moonshine-log-viewer::log-viewer.refresh') }}
                     </span>
                     </x-moonshine::link-button>
                     <x-moonshine::link-button href="#"
@@ -30,15 +30,15 @@
                 </div>
                 <div>
                     <x-moonshine::offcanvas
-                            title="{{ __('moonshine::log-viewer.filters') }}"
+                            title="{{ __('moonshine-log-viewer::log-viewer.filters') }}"
                             :left="false"
                     >
                         <x-slot:toggler>
-                            {{ __('moonshine::log-viewer.filters') }}
+                            {{ __('moonshine-log-viewer::log-viewer.filters') }}
                         </x-slot:toggler>
 
-                        <x-moonshine::form.label name="{{ __('moonshine::log-viewer.level') }}">
-                            {{ __('moonshine::log-viewer.level') }}
+                        <x-moonshine::form.label name="{{ __('moonshine-log-viewer::log-viewer.level') }}">
+                            {{ __('moonshine-log-viewer::log-viewer.level') }}
                         </x-moonshine::form.label>
                         <div class="flex flex-col mb-4">
                             <x-moonshine::form.label>
@@ -75,53 +75,53 @@
                             </x-moonshine::form.label>
                         </div>
 
-                        <x-moonshine::form.label name="{{ __('moonshine::log-viewer.env') }}">
-                            {{ __('moonshine::log-viewer.env') }}
+                        <x-moonshine::form.label name="{{ __('moonshine-log-viewer::log-viewer.env') }}">
+                            {{ __('moonshine-log-viewer::log-viewer.env') }}
                         </x-moonshine::form.label>
                         <x-moonshine::form.input
-                                name="{{ __('moonshine::log-viewer.env') }}"
-                                placeholder="{{ __('moonshine::log-viewer.env') }}"
+                                name="{{ __('moonshine-log-viewer::log-viewer.env') }}"
+                                placeholder="{{ __('moonshine-log-viewer::log-viewer.env') }}"
                                 x-model="filter_env"
                         />
 
-                        <x-moonshine::form.label name="{{ __('moonshine::log-viewer.time_from') }}">
-                            {{ __('moonshine::log-viewer.time_from') }}
+                        <x-moonshine::form.label name="{{ __('moonshine-log-viewer::log-viewer.time_from') }}">
+                            {{ __('moonshine-log-viewer::log-viewer.time_from') }}
                         </x-moonshine::form.label>
                         <x-moonshine::form.input
                                 type="datetime-local"
                                 x-model="filter_time_start"
                         />
 
-                        <x-moonshine::form.label name="{{ __('moonshine::log-viewer.time_to') }}">
-                            {{ __('moonshine::log-viewer.time_to') }}
+                        <x-moonshine::form.label name="{{ __('moonshine-log-viewer::log-viewer.time_to') }}">
+                            {{ __('moonshine-log-viewer::log-viewer.time_to') }}
                         </x-moonshine::form.label>
                         <x-moonshine::form.input
                                 type="datetime-local"
                                 x-model="filter_time_end"
                         />
 
-                        <x-moonshine::form.label name="{{ __('moonshine::log-viewer.message') }}">
-                            {{ __('moonshine::log-viewer.message') }}
+                        <x-moonshine::form.label name="{{ __('moonshine-log-viewer::log-viewer.message') }}">
+                            {{ __('moonshine-log-viewer::log-viewer.message') }}
                         </x-moonshine::form.label>
                         <x-moonshine::form.input
-                                name="{{ __('moonshine::log-viewer.message') }}"
-                                placeholder="{{ __('moonshine::log-viewer.message') }}"
+                                name="{{ __('moonshine-log-viewer::log-viewer.message') }}"
+                                placeholder="{{ __('moonshine-log-viewer::log-viewer.message') }}"
                                 x-model="filter_info"
                         />
 
                         <x-moonshine::form.button
-                                x-on:click="filterReset()">{{ __('moonshine::log-viewer.reset') }}</x-moonshine::form.button>
+                                x-on:click="filterReset()">{{ __('moonshine-log-viewer::log-viewer.reset') }}</x-moonshine::form.button>
                         <x-moonshine::form.button x-on:click="filterApply()"
-                                                  class="btn-primary">{{ __('moonshine::log-viewer.apply') }}</x-moonshine::form.button>
+                                                  class="btn-primary">{{ __('moonshine-log-viewer::log-viewer.apply') }}</x-moonshine::form.button>
                     </x-moonshine::offcanvas>
                 </div>
             </div>
             <x-moonshine::table>
                 <x-slot:thead>
-                    <th>{{ __('moonshine::log-viewer.level') }}</th>
-                    <th>{{ __('moonshine::log-viewer.env') }}</th>
-                    <th>{{ __('moonshine::log-viewer.time') }}</th>
-                    <th>{{ __('moonshine::log-viewer.message') }}</th>
+                    <th>{{ __('moonshine-log-viewer::log-viewer.level') }}</th>
+                    <th>{{ __('moonshine-log-viewer::log-viewer.env') }}</th>
+                    <th>{{ __('moonshine-log-viewer::log-viewer.time') }}</th>
+                    <th>{{ __('moonshine-log-viewer::log-viewer.message') }}</th>
                     <th></th>
                 </x-slot:thead>
                 <x-slot:tbody x-init="fetchLogs()">
@@ -143,7 +143,7 @@
         </x-moonshine::box>
     </x-moonshine::column>
     <x-moonshine::column colSpan="2">
-        <x-moonshine::box title="{{ __('moonshine::log-viewer.files') }}">
+        <x-moonshine::box title="{{ __('moonshine-log-viewer::log-viewer.files') }}">
             <ul class="flex flex-col gap-2">
                 <template x-for="logFile in logFiles">
                     <li>
@@ -165,13 +165,13 @@
             </ul>
         </x-moonshine::box>
         <x-moonshine::divider/>
-        <x-moonshine::box title="{{ __('moonshine::log-viewer.info') }}">
+        <x-moonshine::box title="{{ __('moonshine-log-viewer::log-viewer.info') }}">
             <ul>
                 <li>
-                    {{ __('moonshine::log-viewer.size') }}: <span x-text="size"></span>
+                    {{ __('moonshine-log-viewer::log-viewer.size') }}: <span x-text="size"></span>
                 </li>
                 <li>
-                    {{ __('moonshine::log-viewer.updated_at') }}: <span x-text="lastUpdate"></span>
+                    {{ __('moonshine-log-viewer::log-viewer.updated_at') }}: <span x-text="lastUpdate"></span>
                 </li>
             </ul>
         </x-moonshine::box>
