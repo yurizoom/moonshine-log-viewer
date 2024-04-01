@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\LogViewer\Pages;
+namespace YuriZoom\MoonShineLogViewer\Pages;
 
 use MoonShine\Attributes\Icon;
-use MoonShine\LogViewer\Components\LogViewerComponent;
 use MoonShine\Pages\Page;
+use YuriZoom\MoonShineLogViewer\Components\LogViewerComponent;
 
 #[Icon('heroicons.outline.circle-stack')]
 class LogViewerPage extends Page

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use MoonShine\LogViewer\Controllers\LogViewerController;
+use YuriZoom\MoonShineLogViewer\Controllers\LogViewerController;
 
 Route::group([
     'prefix' => config('moonshine.route.prefix'),

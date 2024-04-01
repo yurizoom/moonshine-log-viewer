@@ -1,6 +1,6 @@
 <?php
 
-namespace MoonShine\LogViewer\Contracts;
+namespace YuriZoom\MoonShineLogViewer\Contracts;
 
 use Carbon\Carbon;
 use Exception;

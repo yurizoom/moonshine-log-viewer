@@ -1,14 +1,14 @@
 <?php
 
-namespace MoonShine\LogViewer\Controllers;
+namespace YuriZoom\MoonShineLogViewer\Controllers;
 
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
 use MoonShine\Http\Controllers\MoonShineController;
-use MoonShine\LogViewer\Drivers\LogViewerLinux;
-use MoonShine\LogViewer\Drivers\LogViewerWindows;
 use MoonShine\MoonShineRequest;
+use YuriZoom\MoonShineLogViewer\Drivers\LogViewerLinux;
+use YuriZoom\MoonShineLogViewer\Drivers\LogViewerWindows;
 
 class LogViewerController extends MoonShineController
 {

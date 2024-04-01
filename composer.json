@@ -1,7 +1,7 @@
 {
     "name": "yurizoom/moonshine-log-viewer",
     "type": "library",
-    "description": "Log viewer for moonshine",
+    "description": "Log viewer for MoonShine",
     "keywords": ["moonshine", "log", "viewer"],
     "license": "MIT",
     "authors": [
@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MoonShine\\LogViewer\\LogViewerServiceProvider"
+                "YuriZoom\\MoonShineLogViewer\\LogViewerServiceProvider"
             ]
         }
     }

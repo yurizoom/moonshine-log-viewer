@@ -40,7 +40,7 @@ $ composer require yurizoom/moonshine-log-viewer -vvv
 
 Для того чтобы добавить меню в другое место, вставьте следующий код в app/Providers/MoonShineServiceProvider.php:
 ```php
-use MoonShine\LogViewer\Pages\LogViewerPage;
+use YuriZoom\MoonShineLogViewer\Pages\LogViewerPage;
 
 protected function menu(): array
     {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\LogViewer\Drivers;
+namespace YuriZoom\MoonShineLogViewer\Drivers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Str;
-use MoonShine\LogViewer\Contracts\AbstractLogViewer;
+use YuriZoom\MoonShineLogViewer\Contracts\AbstractLogViewer;
 
 /**
  * Class LogViewer.
