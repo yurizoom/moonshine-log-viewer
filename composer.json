@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MoonShine\\LogViewer\\": "src/"
+            "YuriZoom\\MoonShineLogViewer\\": "src/"
         }
     },
     "conflict": {
