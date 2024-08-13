@@ -365,10 +365,7 @@ final class LogViewerLinux extends AbstractLogViewer
      */
     protected function lineFirstLog(): int
     {
-        $output = Process::pipe([
-            $this->getSearchStartLogCommand(),
-            "head -n 1"
-        ])->output();
+        $output = Process::run($this->getSearchStartLogCommand()." | head -n 1")->output();
 
         preg_match('/(\d+):\[(\d{4}(?:-\d{2}){2} \d{2}(?::\d{2}){2})]\s/', trim($output), $matches);
 
