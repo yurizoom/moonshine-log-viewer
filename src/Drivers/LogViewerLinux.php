@@ -336,6 +336,7 @@ final class LogViewerLinux extends AbstractLogViewer
             $this->getSearchStartLogCommand(),
             "wc -l",
         ])->output();
+        $output = trim($output);
 
         $this->countLogs = (int) explode(' ', $output)[0];
 
@@ -352,6 +353,7 @@ final class LogViewerLinux extends AbstractLogViewer
         }
 
         $output = Process::run("wc -l \"{$this->filePath}\"")->output();
+        $output = trim($output);
 
         $this->countLines = (int) explode(' ', $output)[0];
 
