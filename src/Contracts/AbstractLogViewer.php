@@ -132,7 +132,7 @@ abstract class AbstractLogViewer
     {
         $logs = collect(
             preg_split(
-                '/\[(\d{4}(?:-\d{2}){2} \d{2}(?::\d{2}){2})] (\w+)\.(\w+):((?:(?!{"exception").)*)?/',
+                '/\[(\d{4}(?:-\d{2}){2}[T\s]\d{2}(?::\d{2}){2})(?:[^]]+)?] (\w+)\.(\w+):((?:(?!{"exception").)*)?/',
                 trim($raw),
                 -1,
                 PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY
