@@ -1,4 +1,4 @@
-Log viewer for MoonShine
+Log viewer for MoonShine 3
 ============================
 
 Компонент для отображения логов.
@@ -23,7 +23,7 @@ $ composer require yurizoom/moonshine-log-viewer -vvv
 
 ## Настройка
 
-В файле config/moonshine.php добавьте конфигурации.
+Если необходимо изменить настройки, добавьте в файле config/moonshine.php:
 
 ```php
 [
@@ -38,7 +38,7 @@ $ composer require yurizoom/moonshine-log-viewer -vvv
 
 ### Добавление в меню
 
-Для того чтобы добавить меню в другое место, вставьте следующий код в app/Providers/MoonShineServiceProvider.php:
+Для того чтобы добавить меню в другое место, вставьте следующий код в app/MoonShine/Layouts/MoonShineLayout.php:
 ```php
 use YuriZoom\MoonShineLogViewer\Pages\LogViewerPage;
 
@@ -48,11 +48,9 @@ protected function menu(): array
             ...
             
             MenuItem::make(
-                static fn () => __('Log viewer'),
-                new LogViewerPage(),
+                __('Log viewer'),
+                LogViewerPage::class,
             ),
-            
-            ...
         ];
     }
 ```

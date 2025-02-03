@@ -22,12 +22,14 @@ class LogViewerServiceProvider extends ServiceProvider
                 LogViewerPage::class,
             ]);
 
-        $menu->add([
-            MenuItem::make(
-                __('Log viewer'),
-                LogViewerPage::class,
-            ),
-        ]);
+        if (config('moonshine.log_viewer.auto_menu')) {
+            $menu->add([
+                MenuItem::make(
+                    __('Log viewer'),
+                    LogViewerPage::class,
+                ),
+            ]);
+        }
 //            ->when(
 //                config('moonshine.log_viewer.auto_menu'),
 //                fn (MoonShine $moonshine) => $moonshine->
