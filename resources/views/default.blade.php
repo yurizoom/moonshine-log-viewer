@@ -1,32 +1,34 @@
-<x-moonshine::grid xmlns:x-moonshine="http://www.w3.org/1999/html" x-data="data()">
-    <x-moonshine::column colSpan="10">
-        <x-moonshine::box>
+<x-moonshine::layout.grid xmlns:x-moonshine="http://www.w3.org/1999/html" x-data="data">
+    <x-moonshine::layout.column colSpan="10">
+        <x-moonshine::layout.box>
             <div class="flex justify-between">
                 <div class="flex gap-2">
                     <x-moonshine::link-button href="#"
-                                              icon="heroicons.outline.arrow-path"
                                               x-on:click="fetchLogs()"
                     >
-                    <span>
-                        {{ __('moonshine-log-viewer::log-viewer.refresh') }}
-                    </span>
+                        <x-moonshine::icon icon="arrow-path"/>
+                        <span>
+                            {{ __('moonshine-log-viewer::log-viewer.refresh') }}
+                        </span>
                     </x-moonshine::link-button>
                     <x-moonshine::link-button href="#"
                                               x-on:click="togglePlay()"
                     >
-                        <span x-show="!refreshIntervalId"><x-moonshine::icon icon="heroicons.play"/></span>
-                        <span x-show="refreshIntervalId"><x-moonshine::icon icon="heroicons.pause"/></span>
+                        <span x-show="!refreshIntervalId"><x-moonshine::icon icon="play"/></span>
+                        <span x-show="refreshIntervalId"><x-moonshine::icon icon="pause"/></span>
                     </x-moonshine::link-button>
                     <x-moonshine::link-button href="#"
-                                              icon="heroicons.outline.chevron-left"
                                               x-on:click="prevPage()"
                                               x-show="prevUrl"
-                    />
+                    >
+                        <x-moonshine::icon icon="chevron-left"/>
+                    </x-moonshine::link-button>
                     <x-moonshine::link-button href="#"
-                                              icon="heroicons.outline.chevron-right"
                                               x-on:click="nextPage()"
                                               x-show="nextUrl"
-                    />
+                    >
+                        <x-moonshine::icon icon="chevron-right"/>
+                    </x-moonshine::link-button>
                 </div>
                 <div>
                     <x-moonshine::offcanvas
@@ -124,7 +126,7 @@
                     <th>{{ __('moonshine-log-viewer::log-viewer.message') }}</th>
                     <th></th>
                 </x-slot:thead>
-                <x-slot:tbody x-init="fetchLogs()">
+                <x-slot:tbody>
                     <template x-for="(log, index) in logs" :key="index">
                         <tr>
                             <td>
@@ -140,32 +142,32 @@
                     </template>
                 </x-slot:tbody>
             </x-moonshine::table>
-        </x-moonshine::box>
-    </x-moonshine::column>
-    <x-moonshine::column colSpan="2">
-        <x-moonshine::box title="{{ __('moonshine-log-viewer::log-viewer.files') }}">
+        </x-moonshine::layout.box>
+    </x-moonshine::layout.column>
+    <x-moonshine::layout.column colSpan="2">
+        <x-moonshine::layout.box title="{{ __('moonshine-log-viewer::log-viewer.files') }}">
             <ul class="flex flex-col gap-2">
                 <template x-for="logFile in logFiles">
                     <li>
                         <span class="flex gap-2" x-bind:class="logFile === fileName ? 'font-bold' : ''">
                             <template x-if="logFile === fileName">
-                                <x-moonshine::icon icon="heroicons.envelope-open"/>
+                                <x-moonshine::icon icon="envelope-open"/>
                             </template>
                             <template x-if="logFile !== fileName">
-                                <x-moonshine::icon icon="heroicons.envelope"/>
+                                <x-moonshine::icon icon="envelope"/>
                             </template>
                             <x-moonshine::link-native href="#"
                                                       x-on:click="selectFile(logFile)"
-                                                      icon="heroicons.envelope-open"
+                                                      icon="envelope-open"
                                                       x-text="logFile"
                             />
                         </span>
                     </li>
                 </template>
             </ul>
-        </x-moonshine::box>
-        <x-moonshine::divider/>
-        <x-moonshine::box title="{{ __('moonshine-log-viewer::log-viewer.info') }}">
+        </x-moonshine::layout.box>
+        <x-moonshine::layout.divider/>
+        <x-moonshine::layout.box title="{{ __('moonshine-log-viewer::log-viewer.info') }}">
             <ul>
                 <li>
                     {{ __('moonshine-log-viewer::log-viewer.size') }}: <span x-text="size"></span>
@@ -174,13 +176,13 @@
                     {{ __('moonshine-log-viewer::log-viewer.updated_at') }}: <span x-text="lastUpdate"></span>
                 </li>
             </ul>
-        </x-moonshine::box>
-    </x-moonshine::column>
-</x-moonshine::grid>
+        </x-moonshine::layout.box>
+    </x-moonshine::layout.column>
+</x-moonshine::layout.grid>
 
 <script>
-    function data() {
-        return {
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
             isLoading: false,
             end: 0,
             fileName: null,
@@ -197,6 +199,11 @@
             filter_time_start: '',
             filter_time_end: '',
             filter_info: '',
+
+            init() {
+                this.fetchLogs();
+            },
+
             fetch(url, params = {}, rewrite = true) {
                 let _url = new URL(url);
 
@@ -227,19 +234,23 @@
                         this.lastUpdate = data.lastUpdate;
                     });
             },
+
             fetchLogs() {
                 this.isLoading = true;
                 this.fetch(`{{ route('moonshine.log.viewer.file') }}/${this.file}`);
             },
+
             fetchLastLogs() {
                 this.fetch(`{{ route('moonshine.log.viewer.file') }}/${this.file}`, {offset: this.end}, false);
             },
+
             selectFile(file) {
                 this.file = file;
                 this.end = 0;
                 this.stopPlay();
                 this.filterReset();
             },
+
             togglePlay() {
                 if (this.refreshIntervalId) {
                     clearInterval(this.refreshIntervalId);
@@ -249,20 +260,24 @@
                     this.refreshIntervalId = setInterval(() => this.fetchLastLogs(), 2000);
                 }
             },
+
             stopPlay() {
                 if (this.refreshIntervalId) {
                     clearInterval(this.refreshIntervalId);
                     this.refreshIntervalId = null;
                 }
             },
+
             prevPage() {
                 this.stopPlay();
                 this.fetch(this.prevUrl);
             },
+
             nextPage() {
                 this.stopPlay();
                 this.fetch(this.nextUrl);
             },
+
             levelColor(level) {
                 const levelColors = {
                     EMERGENCY: 'badge-gray',
@@ -276,9 +291,11 @@
                 };
                 return levelColors[level];
             },
+
             filterApply() {
                 this.fetch(`{{ route('moonshine.log.viewer.file') }}/${this.file}`);
             },
+
             filterReset() {
                 this.filter_level = [];
                 this.filter_env = '';
@@ -287,6 +304,6 @@
                 this.filter_info = '';
                 this.fetchLogs();
             }
-        }
-    }
+        }));
+    });
 </script>

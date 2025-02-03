@@ -5,8 +5,8 @@ namespace YuriZoom\MoonShineLogViewer\Controllers;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
-use MoonShine\Http\Controllers\MoonShineController;
-use MoonShine\MoonShineRequest;
+use MoonShine\Laravel\Http\Controllers\MoonShineController;
+use MoonShine\Laravel\MoonShineRequest;
 use YuriZoom\MoonShineLogViewer\Drivers\LogViewerLinux;
 use YuriZoom\MoonShineLogViewer\Drivers\LogViewerWindows;
 

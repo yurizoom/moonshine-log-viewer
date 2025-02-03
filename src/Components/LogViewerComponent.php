@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace YuriZoom\MoonShineLogViewer\Components;
 
-use MoonShine\Components\MoonShineComponent;
+use MoonShine\UI\Components\MoonShineComponent;
 
 /**
  * @method static static make()
@@ -12,11 +12,6 @@ use MoonShine\Components\MoonShineComponent;
 final class LogViewerComponent extends MoonShineComponent
 {
     protected string $view = 'moonshine-log-viewer::default';
-
-    public function __construct()
-    {
-        //
-    }
 
     protected function viewData(): array
     {
