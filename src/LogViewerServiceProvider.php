@@ -30,15 +30,5 @@ class LogViewerServiceProvider extends ServiceProvider
                 ),
             ]);
         }
-//            ->when(
-//                config('moonshine.log_viewer.auto_menu'),
-//                fn (MoonShine $moonshine) => $moonshine->
-//                vendorsMenu([
-//                    MenuItem::make(
-//                        static fn () => __('Log viewer'),
-//                        new LogViewerPage(),
-//                    ),
-//                ])
-//            );
     }
 }
