@@ -31,7 +31,7 @@
                     </x-moonshine::link-button>
                 </div>
                 <div>
-                    <x-moonshine::offcanvas
+                    <x-moonshine::off-canvas
                             title="{{ __('moonshine-log-viewer::log-viewer.filters') }}"
                             :left="false"
                     >
@@ -115,7 +115,7 @@
                                 x-on:click="filterReset()">{{ __('moonshine-log-viewer::log-viewer.reset') }}</x-moonshine::form.button>
                         <x-moonshine::form.button x-on:click="filterApply()"
                                                   class="btn-primary">{{ __('moonshine-log-viewer::log-viewer.apply') }}</x-moonshine::form.button>
-                    </x-moonshine::offcanvas>
+                    </x-moonshine::off-canvas>
                 </div>
             </div>
             <x-moonshine::table>
