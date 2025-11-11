@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Str;
 use MoonShine\Laravel\Http\Controllers\MoonShineController;
-use MoonShine\Laravel\MoonShineRequest;
+use MoonShine\Contracts\Core\DependencyInjection\CrudRequestContract as MoonShineRequest;
 use YuriZoom\MoonShineLogViewer\Drivers\LogViewerLinux;
 use YuriZoom\MoonShineLogViewer\Drivers\LogViewerWindows;
 

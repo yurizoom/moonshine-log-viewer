@@ -14,7 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.2",
-        "moonshine/moonshine": "^3.0"
+        "moonshine/moonshine": "^4.0"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +22,7 @@
         }
     },
     "conflict": {
-        "moonshine/moonshine": "<3.0"
+        "moonshine/moonshine": "<4.0"
     },
     "extra": {
         "laravel": {

@@ -43,35 +43,35 @@
                             {{ __('moonshine-log-viewer::log-viewer.level') }}
                         </x-moonshine::form.label>
                         <div class="flex flex-col mb-4">
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Emergency"/>
                                 Emergency
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Alert"/>
                                 Alert
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Critical"/>
                                 Critical
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Error"/>
                                 Error
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Warning"/>
                                 Warning
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Notice"/>
                                 Notice
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Info"/>
                                 Info
                             </x-moonshine::form.label>
-                            <x-moonshine::form.label>
+                            <x-moonshine::form.label class="flex flex-row gap-2">
                                 <x-moonshine::form.input x-model="filter_level" type="checkbox" value="Debug"/>
                                 Debug
                             </x-moonshine::form.label>
